@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="nama"/>
+    <textarea id="alamat"></textarea>
+    <button onClick="tambah()">tambah</button>
+    <div>
+        <table id="table">
+            <tr>
+                <th>
+                    Nama
+                </th> 
+                <th>
+                    Alamat
+                </th>
+            </tr>
+
+        </table>
+    </div>
+
+    <script>
+        let nama = document.getElementById("nama") 
+        let alamat = document.getElementById("alamat")
+        let table = document.getElementById('table')
+        function tambah() {
+        // jika nama atau alamat kosong maka tidak boleh diinput 
+        if (nama.value == "" || alamat.value == "") {
+        alert ("nama dan alamat tidak boleh dikosongkan!")
+        } else {
+        console.log(nama.value)
+        console.log(alamat.value)
+        console.log(table)
+        table.innerHTML += `            <tr>
+                <td> ${nama.value} </td>
+                <td> ${alamat.value} </td>
+            </tr>`
+        nama.value = ""
+        alamat.value = ""
+        }
+        }
+    </script>
+</body>
+</html>
